@@ -42,7 +42,7 @@ mkdir -p /var/www/repos/apt/debian/{conf,db,dists,key,lists,pool,incoming}
 
 Create the distribution file
 ```bash
-nano conf/distributions
+nano /var/www/repos/apt/debian/conf/distributions
 ```
 ```bash
 Origin: Romain BERBILLE
