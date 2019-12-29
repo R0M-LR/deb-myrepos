@@ -3,7 +3,7 @@
 ## Prerequisite
 
 ```bash
-apt-get update && apt-get install dpkg-sig reprepro --yy
+apt-get update && apt-get install dpkg-sig reprepro -yy
 ```
 
 ## Server side
