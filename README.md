@@ -13,7 +13,7 @@ Generate the passphrase and then store it somewhere.
 ```bash
 date +%s | sha256sum | base64 | head -c 32 ; echo
 ```
-ex : NGU1N2Y2MzVhZTBmZjVmZWI3ZWVjZWU4   
+ex : NGU1N2Y2MzXXXXXXXVmZWI3ZWVjZWU4   
 
 Deposit key generation
 
@@ -29,7 +29,7 @@ gpg --list-keys
 ```
 Export of public key   
 ```bash
-gpg --output rom.gpg.key --armor --export 'your_id_or_name'
+gpg --output rom.gpg.key --armor --export 'MY_REPO'
 ```
 Copy on that right directory
 ```bash
@@ -45,7 +45,7 @@ Create the distribution file
 nano /var/www/repos/apt/debian/conf/distributions
 ```
 ```bash
-Origin: Romain BERBILLE
+Origin: MY_REPO
 Label: RB_REPO
 Suite: stable
 Codename: stable
@@ -54,7 +54,7 @@ Components: main
 Description: RB personnal repo
 SignWith: yes
 
-Origin: Romain BERBILLE
+Origin: MY_REPO
 Label: RB_REPO
 Suite: beta
 Codename: beta
@@ -107,10 +107,13 @@ nano /etc/apache2/sites-available/deb.rom.ovh.conf
 
 </VirtualHost>
 ```
-
+```diff
+- After the first configuration, you need to add one packet in your repo for sign it. If you don't sign your repo, you will obtain an error on your apt-get update on client side.
+```
 ## Client side
 
 If you don't have gnupg2 packet in your in client, you need to install this.
+
 ```bash
 apt-get update && apt-get install -y gnupg2
 ```
