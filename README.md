@@ -106,10 +106,10 @@ nano /etc/apache2/sites-available/deb.rom.ovh.conf
         </Directory>
 
 </VirtualHost>
-```
-:warning: After the first configuration, you need to add one packet in your repo for sign it. If you don't sign your repo, you will obtain an error on your apt-get update on client side.   
+```  
 
 ## Client side
+:warning: After the first configuration, you need to add one packet in your repo for sign it. If you don't sign your repo, you will obtain an error on your apt-get update on client side. 
 
 If you don't have gnupg2 packet in your in client, you need to install this.
 
