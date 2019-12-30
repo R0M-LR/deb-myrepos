@@ -107,9 +107,8 @@ nano /etc/apache2/sites-available/deb.rom.ovh.conf
 
 </VirtualHost>
 ```
-```diff
-- After the first configuration, you need to add one packet in your repo for sign it. If you don't sign your repo, you will obtain an error on your apt-get update on client side.
-```
+:warning: After the first configuration, you need to add one packet in your repo for sign it. If you don't sign your repo, you will obtain an error on your apt-get update on client side.   
+
 ## Client side
 
 If you don't have gnupg2 packet in your in client, you need to install this.
@@ -121,4 +120,3 @@ apt-get update && apt-get install -y gnupg2
 wget -O - http://deb.rom.ovh/apt/debian/key/rom.gpg.key | apt-key add -
 echo 'deb http://deb.rom.ovh/apt/debian stable main' >> /etc/apt/sources.list.d/rom.list
 ```
-
