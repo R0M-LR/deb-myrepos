@@ -1,4 +1,4 @@
-# Creation of a debian repository
+# Debian repository creation
 
 ## Prerequisite
 
